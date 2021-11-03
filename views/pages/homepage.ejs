@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Homepage</title>
+</head>
+<body>
+    <h1>Welcome to the homepage</h1>
+    <table id="descrpntable">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+               <!--  <th>Password</th> -->
+                <th>HashedPassword</th>
+                <!-- <th>Action</th> -->
+            </tr> 
+        </thead>
+        <tbody>
+            <% for (let i=0; i < users.length; i++){ %>
+            <tr>
+                <td data-label="user id"><%= users[i].userid %></td>
+                <td data-label="firstname"><%= users[i].firstname %></td>
+                <td data-label="lastname"><%= users[i].lastname %></td>
+                <td data-label="email"><%= users[i].email %></td>
+                <td data-label="password" ><div class="pwd"><%= users[i].hashpwd %></div></td>
+               <!--  <td data-label="password" ><div class="pwd"><%= users[i].password %></div></td> -->
+                
+               <!--  <td data-label="action"><button class="action" onclick="getId(this)">View</button></td> -->
+                
+            </tr>
+            <% } %> 
+        </tbody>
+    </table>
+</body>
+</html>

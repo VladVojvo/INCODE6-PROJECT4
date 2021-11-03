@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS schedulesapp;
+CREATE DATABASE schedulesapp;

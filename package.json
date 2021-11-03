@@ -1,11 +1,14 @@
 {
-  "name": "INCODE6-PROJECT4",
+  "name": "incode6-project4",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node -r dotenv/config index.js",
-    "dev":"nodemon -r dotenv/config index.js",
+    "start": "node -r dotenv/config index.js",
+    "create_db": "psql -U postgres -f sql/create_db.sql",
+    "create_table": "psql -U postgres -d schedulesapp -f sql/create_table.sql",
+    "seed_table": "psql -U postgres -d schedulesapp -f sql/seed_table.sql",
+    "dev": "nodemon -r dotenv/config index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "env": "0.0.2",
     "express": "^4.17.1",
