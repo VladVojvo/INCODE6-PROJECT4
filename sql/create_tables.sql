@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS users (
     hashPwd VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS Schedules (
+CREATE TABLE IF NOT EXISTS schedules (
     scheduleID SERIAL PRIMARY KEY,
     userid int NOT NULL,
     sday int,

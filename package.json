@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node -r dotenv/config index.js",
     "create_db": "psql -U postgres -f sql/create_db.sql",
-    "create_table": "psql -U postgres -d schedulesapp -f sql/create_table.sql",
-    "seed_table": "psql -U postgres -d schedulesapp -f sql/seed_table.sql",
+    "create_table": "psql -U postgres -d schedulesapp -f sql/create_tables.sql",
+    "seed_table": "psql -U postgres -d schedulesapp -f sql/seed_tables.sql",
     "dev": "nodemon -r dotenv/config index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -7,7 +7,7 @@ const router = express.Router()
 
 
 router.get("/:id", (req, res) => {
-    db.one('SELECT * FROM users where id=$1, ' (req.params.id))
+    db.oneOrNone('SELECT * FROM users WHERE userid=$1; ', [req.params.id])
     .then((users) => {
         res.render("pages/users")
     })

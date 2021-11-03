@@ -4,12 +4,13 @@ const db = require('../database')
 
 
 router.get('/', (req, res) => {
-        res.render('pages/homepage')
+       /* res.render('pages/homepage')*/
         
         db.any('select * from users')
-            .then((data) => {
+            .then((users) => {
+                console.log(users)
                 res.render('pages/homepage',{
-                    users: data
+                    users: users
                 }) 
                 res.end()    
             })

@@ -1,6 +1,6 @@
-INSERT INTO  users (firstname, lastname, email, password)
+INSERT INTO  users (firstname, lastname, email, password, hashpwd)
 VALUES
-('def', 'fghi', 'fghi.abc@gmail.com', 'c6b7fb4ccd4bc12176e16889c8e9065cb708d0f8c304c8c3db609b644da9536') 
+('def', 'fghi', 'fghi.abc@gmail.com', 'fsdhnjkuncb', 'c6b7fb4ccd4bc12176e16889c8e9065cb708d0f8c304c8c3db609b644da9536');
 
 INSERT INTO  schedules (userid, scheduleid, sday, start_at, end_at)
 VALUES
