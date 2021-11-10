@@ -8,17 +8,19 @@
     <title>Homepage</title>
 </head>
 <body>
-    <h1>Welcome to the homepage</h1>
-    <table id="descrpntable">
+    <%- include('../partials/header') %>
+    <h1>Welcome to the app, <%= users[0].firstname %></h1>
+    
+    <!-- <table id="descrpntable">
         <thead>
             <tr>
                 <th>User ID</th>
                 <th>FirstName</th>
                 <th>LastName</th>
                 <th>Email</th>
-               <!--  <th>Password</th> -->
+                <th>Password</th>
                 <th>HashedPassword</th>
-                <!-- <th>Action</th> -->
+                <th>Action</th>
             </tr> 
         </thead>
         <tbody>
@@ -28,13 +30,25 @@
                 <td data-label="firstname"><%= users[i].firstname %></td>
                 <td data-label="lastname"><%= users[i].lastname %></td>
                 <td data-label="email"><%= users[i].email %></td>
-               <!--  <td data-label="password" ><div class="pwd"><%= users[i].password %></div></td> -->
+                <td data-label="password" ><div class="pwd"><%= users[i].password %></div></td>
                 <td data-label="password" ><div class="pwd"><%= users[i].hashpwd %></div></td>
-               <!--  <td data-label="action"><button class="action" onclick="getId(this)">View</button></td> -->
+                <td data-label="action"><button class="action" onclick="getId(this)">View</button></td>
                 
             </tr>
             <%} %> 
         </tbody>
     </table>
+    <br> -->
+    <br>
+    <div class="mydiv">
+    <% for(let i=0;i<users.length;i++){ %>
+        <div class="innerdiv">
+            <p>user id:<%= users[i].userid %></p>
+            <p>first name:<%= users[i].firstname %></p>
+            <p>last name:<%= users[i].lastname %></p>
+            <p>email id:<%= users[i].email %></p>
+        </div>
+        <%} %> 
+    </div>    
 </body>
 </html>

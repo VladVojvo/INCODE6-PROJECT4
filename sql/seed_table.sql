@@ -4,5 +4,5 @@ VALUES
 
 INSERT INTO  schedules (userid, scheduleid, sday, start_at, end_at)
 VALUES
-(3, 3 , 5, '08:00:00', '12:00:00'),
-(3, 4 ,6, '10:00:00', '14:00:00')
+(2, 1 , 5, '08:00:00', '12:00:00'),
+(2, 2 ,6, '10:00:00', '14:00:00')

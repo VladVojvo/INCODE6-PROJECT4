@@ -1,4 +1,5 @@
 const express = require('express')
+const session = require('express-session')
 const app = express()
 const PORT = process.env.PORT 
 
@@ -11,6 +12,18 @@ app.set('view engine', 'ejs')
 
 // For css and images
 app.use(express.static('public'))
+
+//Session config
+app.use(session({
+    cookie:{
+        maxAge: 1000 * 60 * 60 * 24
+    },
+    name: "mrcoffee_user",
+    resave: false,
+    saveUninitialized: false,
+    secret: process.env.SESSION_SECRET
+
+}))
 
 //Route variables
 const homeRouter = require('./routes/homepage')

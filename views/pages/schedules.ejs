@@ -8,6 +8,50 @@
     <title>Schedules Management</title>
 </head>
 <body>
-    <h1>Welcome to the schedules management page</h1>
+    <%- include('../partials/header') %>
+    <!-- <table id="descrpntable">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>HashedPassword</th>
+                <th>Action</th>
+            </tr> 
+        </thead>
+        <tbody>
+            <% for(let i=0;i<users.length;i++){ %>
+            <tr>
+                <td data-label="user id"><%= users[i].userid %></td>
+                <td data-label="firstname"><%= users[i].firstname %></td>
+                <td data-label="lastname"><%= users[i].lastname %></td>
+                <td data-label="email"><%= users[i].email %></td>
+                <td data-label="password" ><div class="pwd"><%= users[i].password %></div></td>
+                <td data-label="password" ><div class="pwd"><%= users[i].hashpwd %></div></td>
+                <td data-label="action"><button class="action" onclick="getId(this)">View</button></td>
+                
+            </tr>
+            <%} %> 
+        </tbody>
+    </table>
+    <br> -->
+    <br>
+    <div class="mydiv">
+     <% if(schedules.length>0){ %>    
+    <% for(let i=0;i<schedules.length;i++){ %>
+        <div class="innerdiv">
+            <p>user id:<%= schedules[i].userid %></p>
+            <p>first name:<%= schedules[i].firstname %></p>
+            <p>last name:<%= schedules[i].lastname %></p>
+            <p>email id:<%= schedules[i].email %></p>
+        </div>
+        <%} %>
+        <%} %>
+       <% else{ %>
+        <p>No schedules for the user</p>
+       <%} %>
+    </div>    
 </body>
 </html>

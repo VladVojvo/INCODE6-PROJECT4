@@ -2,4 +2,39 @@
     margin: 0;
     padding: 0;
 }
- 
+.mydiv{
+    display: flex;
+}
+
+.innerdiv{
+border: 2px solid black;
+margin: 5px 5px;
+width: 250px;
+}
+
+.nav-header{
+    width: 100%;
+    background: tomato;
+    height: 60px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-header ul{
+    margin-top: 20px;
+    margin-right: 50px;
+} 
+
+.nav-header ul a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+}
+
+button{
+    background: #fff;
+    color: tomato;
+    border: 2px solid #fff;
+    width: 70px;
+}
