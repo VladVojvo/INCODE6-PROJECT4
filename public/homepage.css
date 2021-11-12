@@ -1,0 +1,35 @@
+
+body{
+    max-width: 1200px;
+    margin:0 auto;
+    min-height: 1200px;
+}
+.list-group-item{
+    min-width: 7em;
+}
+
+h1{
+    margin: 0.5em 0 0.5em 0.4em ;
+}
+
+h2{
+    margin: 0em 0 0.7em 0.4em ;
+}
+.btn-group-sm > .btn, .btn-sm {
+    padding: 0;
+}
+
+.form-floating{
+    max-width:30em;
+}
+
+footer{  
+    bottom:0;     
+    display:block;
+    position:relative;
+    background-color: #e3f2fd;
+    height:56px;  
+    width:1200px; 
+    text-align: center;
+    
+}

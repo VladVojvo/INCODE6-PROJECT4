@@ -7,15 +7,31 @@ const router = express.Router()
 
 
 router.get("/:id", (req, res) => {
-    db.oneOrNone('SELECT * FROM users WHERE userid=$1; ', [req.params.id])
-    .then((users) => {
-        res.render("pages/users")
+
+    db.task(async t =>{
+        const users = await t.any('SELECT * FROM users WHERE userid=$1; ', [req.params.id]);
+        //console.log(users)
+        const schedules = await t.any('SELECT * FROM schedules')
+        const together = await t.any ('SELECT users, *, schedules, *  from users  FULL OUTER JOIN schedules ON schedules.userid=users.userid');             
+        //console.log(together)
+        return {users, schedules, together}
+        
     })
-    .catch((err) =>{
-        console.log(err)
-        res.send(err.message)
-    })
-               
-    })  
+    
+        .then(({users, schedules, together}) => {                
+            res.render('pages/users',{
+                users, 
+                schedules,
+                together
+            }) 
+            res.end()
+                
+        })
+        
+        .catch((err) =>{
+            res.send(err)
+            res.end()
+        })
+})  
 
 module.exports = router
