@@ -3,13 +3,18 @@
     padding: 0;
 }
 .mydiv{
-    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    /* float: left; */
+    /* border: 2px solid black; */
 }
 
 .innerdiv{
 border: 2px solid black;
 margin: 5px 5px;
 width: 250px;
+padding: 10px 10px;
+float: left;
 }
 
 .nav-header{

@@ -9,49 +9,51 @@
 </head>
 <body>
     <%- include('../partials/header') %>
-    <!-- <table id="descrpntable">
-        <thead>
-            <tr>
-                <th>User ID</th>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>HashedPassword</th>
-                <th>Action</th>
-            </tr> 
-        </thead>
-        <tbody>
-            <% for(let i=0;i<users.length;i++){ %>
-            <tr>
-                <td data-label="user id"><%= users[i].userid %></td>
-                <td data-label="firstname"><%= users[i].firstname %></td>
-                <td data-label="lastname"><%= users[i].lastname %></td>
-                <td data-label="email"><%= users[i].email %></td>
-                <td data-label="password" ><div class="pwd"><%= users[i].password %></div></td>
-                <td data-label="password" ><div class="pwd"><%= users[i].hashpwd %></div></td>
-                <td data-label="action"><button class="action" onclick="getId(this)">View</button></td>
-                
-            </tr>
-            <%} %> 
-        </tbody>
-    </table>
-    <br> -->
     <br>
+    <form action="/schedules" method="post">
+        <label for="day">Select day</label>
+        <select name="day" id="day">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+
+        <label for="start_at">Start at:</label>
+        <select name="start_at" id="start_at">
+            <% for(let i=9;i<24; i++){ %>
+                <option value="<%= i %>:00<%= i>11?'pm':'am'%>"><%= i %>:00<%= i>11?'pm':'am'%></option>
+             <% } %>   
+            </select>
+        
+        <label for="end_at">End at:</label>
+        <select name="end_at" id="end_at">
+            <% for(let i=9;i<24; i++){ %>
+                <option value="<%= i %>:00<%= i>11?'pm':'am'%>"><%= i %>:00<%= i>11?'pm':'am'%></option>
+            <% } %>   
+            </select>    
+
+        <button type="submit">Add schedule</button>
+     </form>
+     <a href="/allschedules">View all schedules</a>
     <div class="mydiv">
-     <% if(schedules.length>0){ %>    
-    <% for(let i=0;i<schedules.length;i++){ %>
-        <div class="innerdiv">
-            <p>user id:<%= schedules[i].userid %></p>
-            <p>first name:<%= schedules[i].firstname %></p>
-            <p>last name:<%= schedules[i].lastname %></p>
-            <p>email id:<%= schedules[i].email %></p>
-        </div>
+     <% if(schedules.length==0){ %>
+         <p>No schedules for the user</p>
+     <% }else{ %>
+        <% for(let i=0;i<schedules.length;i++){ %>
+            <div class="innerdiv">
+                <p>User id:<%= schedules[i].userid %></p>
+                <p>Day:<%= schedules[i].sday %></p>
+                <p>Start At:<%= schedules[i].start_at %></p>
+                <p>End At:<%= schedules[i].end_at %></p>
+                <button>Delete</button>
+            </div>
+            <%} %>
         <%} %>
-        <%} %>
-       <% else{ %>
-        <p>No schedules for the user</p>
-       <%} %>
+    
     </div>    
 </body>
 </html>

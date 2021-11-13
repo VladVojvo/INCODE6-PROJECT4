@@ -2,7 +2,7 @@
 VALUES
 ('def', 'fghi', 'fghi.abc@gmail.com', 'c6b7fb4ccd4bc12176e16889c8e9065cb708d0f8c304c8c3db609b644da9536') */
 
-INSERT INTO  schedules (userid, scheduleid, sday, start_at, end_at)
+INSERT INTO  schedules (userid, sday, start_at, end_at)
 VALUES
-(2, 1 , 5, '08:00:00', '12:00:00'),
-(2, 2 ,6, '10:00:00', '14:00:00')
+(1 , 'Monday', '08:00am', '12:00pm'),
+(1, 'Tuesday', '10:00am', '15:00pm')

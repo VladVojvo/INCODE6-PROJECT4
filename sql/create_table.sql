@@ -10,8 +10,8 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS Schedules (
     scheduleID SERIAL PRIMARY KEY,
     userid int NOT NULL,
-    sday int,
-    start_at TIME NOT NULL,
-    end_at TIME NOT NULL,
+    sday VARCHAR(100) NOT NULL,
+    start_at VARCHAR(100) NOT NULL,
+    end_at VARCHAR(100) NOT NULL,
     FOREIGN KEY (userid) REFERENCES users(userid)
 );
