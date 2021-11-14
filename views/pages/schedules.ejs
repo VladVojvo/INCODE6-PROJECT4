@@ -37,23 +37,40 @@
             </select>    
 
         <button type="submit">Add schedule</button>
+        <a href="/allschedules">View all schedules</a>
      </form>
-     <a href="/allschedules">View all schedules</a>
+     
+     <form action="/delete" method="post">
+         <input type="text" name="scheduleid" id="scheduleid" placeholder="Enter the schedule id">
+         <button type="submit">Delete</button>
+     </form>
+
+     
+
     <div class="mydiv">
      <% if(schedules.length==0){ %>
          <p>No schedules for the user</p>
      <% }else{ %>
         <% for(let i=0;i<schedules.length;i++){ %>
             <div class="innerdiv">
+                <p>Schedule id:<%= schedules[i].scheduleid %></p>
                 <p>User id:<%= schedules[i].userid %></p>
                 <p>Day:<%= schedules[i].sday %></p>
                 <p>Start At:<%= schedules[i].start_at %></p>
                 <p>End At:<%= schedules[i].end_at %></p>
-                <button>Delete</button>
+                <!-- <button>Delete</button> -->
             </div>
             <%} %>
         <%} %>
     
     </div>    
+
+    <ul>
+        <% if(typeof errors !='undefined'){ %>
+            <% errors.forEach(error =>{ %>
+                <li><%= error.message %></li>
+           <% }) %>   
+        <% } %> 
+    </ul>
 </body>
 </html>

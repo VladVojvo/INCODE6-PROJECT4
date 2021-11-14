@@ -16,6 +16,7 @@
      <% }else{ %>
         <% for(let i=0;i<schedules.length;i++){ %>
             <div class="innerdiv">
+                <p>Schedule id:<%= schedules[i].scheduleid %></p>
                 <p>User id:<%= schedules[i].userid %></p>
                 <p>Name:<%= schedules[i].firstname %> <%= schedules[i].lastname %>(<%= schedules[i].firstname.charAt(0).toUpperCase() %><%= schedules[i].lastname.charAt(0).toUpperCase() %>)</p>
                 <p>Day:<%= schedules[i].sday %></p>

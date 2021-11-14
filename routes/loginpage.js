@@ -61,10 +61,18 @@ router.post('/', (req,res) => {
                     res.render('pages/loginpage', {errors})
                 }
                 else{
-                    req.session.userId = user.userid
-                    const name = user.firstname
-                    /* res.send("Login successful!!") */
-                    res.redirect('/home')
+                    
+                   
+                    if(user.isverified==false){
+                        errors.push({message:"Verify your email address using the link sent!!!"})
+                    res.render('pages/loginpage', {errors})
+                    }
+                    else{
+                        req.session.userId = user.userid
+                        const name = user.firstname
+                        res.redirect('/home')
+                    }
+                    /* res.send("Login successful!!"+user.isverified) */
                 }
                 
             }

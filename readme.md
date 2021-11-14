@@ -16,8 +16,11 @@ describe table
 list users
 \du
 
-[]login users
-[]create schedules
-[]display schedules
-[]view all schedules
-[]delete schedules
+[x]login users
+[x]create schedules
+[x]display schedules
+[x]view all schedules
+[x]delete schedules
+[]verification mail
+[]forgot password
+[]more strict password validations

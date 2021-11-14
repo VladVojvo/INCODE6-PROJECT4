@@ -7,6 +7,21 @@ const bcrypt = require('bcryptjs')
 //Connection to db
 const db = require('../database') 
 
+//Nodemailer 
+const nodemailer = require('nodemailer')
+
+//mail sender details
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth:{
+        user: 'fitcustrainer@gmail.com',
+        pass: 'fitcus@123'
+    },
+    tls:{
+        rejectUnauthorized : false
+    }
+})
+
 //Regex for validation
 const regexForEmail = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
 const regexForNumbers = /\d/
@@ -73,8 +88,28 @@ router.post('/', (req, res) =>{
                        const hashPassword = bcrypt.hashSync(password, salt)
                        /* const password = bcrypt.hashSync(req.body.password, salt) */
                       /*  req.body.password = password  */
-                       db.none('INSERT INTO users (firstname, lastname, email, password, hashpwd) VALUES($1, $2, $3, $4, $5);',[firstname, lastname, cleanemail, password, hashPassword])
+                       db.none('INSERT INTO users (firstname, lastname, email, password, hashpwd, isVerified) VALUES($1, $2, $3, $4, $5, $6);',[firstname, lastname, cleanemail, password, hashPassword, false])
                        .then(()=>{
+
+                       //send verification mail
+                       const mailOptions = {
+                           from: ' "Verify your mail" <schedulesApp@gmail.com>',
+                           to: cleanemail,
+                           subject: 'Mr.Coffee Schedules App - verify your email',
+                           html: `<h2>${firstname}! Thanks for registering on our site </h2>
+                                <h4> Please verify your mail to continue ...</h4>
+                                <a href="http://localhost:4000/verifymail/${cleanemail}">Verify your email by clicking on the link</a>`
+                       }
+                       
+                       transporter.sendMail(mailOptions, function(error, info){
+                           if(error){
+                               console.log(error)
+                           }
+                           else{
+                               console.log("Verification email is sent to your email address")
+                           }
+                       })
+
                        res.redirect('/')
                        })
                        .catch((err)=>{

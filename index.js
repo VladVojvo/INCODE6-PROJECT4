@@ -32,6 +32,10 @@ const smRouter = require('./routes/schedulemanagement')
 const signupRouter = require('./routes/signup')
 const logoutRouter = require('./routes/logout')
 const schedulesRouter = require('./routes/allschedules')
+const deleteRouter = require('./routes/delete')
+const verifyMailRouter = require('./routes/verifymail')
+const forgotPasswordRouter = require('./routes/forgotpassword')
+const resetPasswordRouter = require('./routes/resetpassword')
 
 //routes
 app.use('/allschedules', schedulesRouter)
@@ -39,7 +43,10 @@ app.use('/home', homeRouter)
 app.use('/schedules',smRouter)
 app.use('/signup',signupRouter)
 app.use('/logout',logoutRouter)
-/* app.use('/allschedules', allschedulesRouter) */
+app.use('/delete', deleteRouter)
+app.use('/verifymail', verifyMailRouter)
+app.use('/forgotpassword', forgotPasswordRouter)
+app.use('/resetpassword', resetPasswordRouter)
 app.use('/',loginRouter)
 
 
