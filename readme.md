@@ -21,6 +21,5 @@ list users
 [x]display schedules
 [x]view all schedules
 [x]delete schedules
-[]verification mail
-[]forgot password
-[]more strict password validations
+[x]verification mail
+[x]forgot password
