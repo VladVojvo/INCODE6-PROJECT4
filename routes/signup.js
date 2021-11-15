@@ -109,8 +109,9 @@ router.post('/', (req, res) =>{
                                console.log("Verification email is sent to your email address")
                            }
                        })
-
-                       res.redirect('/')
+                       
+                       errors.push({message:"Account created successfully"})
+                        res.render('pages/loginpage', {errors})
                        })
                        .catch((err)=>{
                             res.send(err)

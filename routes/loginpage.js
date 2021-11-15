@@ -15,6 +15,7 @@ const regexForSpecialCharacters = /[-|$|=|_|(|)|{|}|:|;|'|"|.|>|<|,|!|@|#|%|^|&|
 
 //Get method to login page
 router.get('/', toHome, (req,res) =>{
+    /* console.log(req.flash('success')) */
     res.render('pages/loginpage')
 })
 

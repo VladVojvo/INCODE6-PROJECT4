@@ -1,6 +1,7 @@
 const express = require('express')
 const session = require('express-session')
 const app = express()
+const flash = require('express-flash')
 const PORT = process.env.PORT 
 
 //Middleware to parse req.body
@@ -24,6 +25,8 @@ app.use(session({
     secret: process.env.SESSION_SECRET
 
 }))
+
+app.use(flash())
 
 //Route variables
 const homeRouter = require('./routes/homepage')
