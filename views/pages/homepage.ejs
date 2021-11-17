@@ -6,49 +6,41 @@
     <meta name="viewport" content="width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <title>Homepage</title>
+    <!-- bootstrap links -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+    crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+    crossorigin="anonymous"></script>
+    <title>Home Page</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
-<body>
+<body id="homepagebody">
     <%- include('../partials/header') %>
-    <h1>Welcome to the app, <%= users[0].firstname %></h1>
-    
-    <!-- <table id="descrpntable">
-        <thead>
-            <tr>
-                <th>User ID</th>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>HashedPassword</th>
-                <th>Action</th>
-            </tr> 
-        </thead>
-        <tbody>
-            <% for(let i=0;i<users.length;i++){ %>
-            <tr>
-                <td data-label="user id"><%= users[i].userid %></td>
-                <td data-label="firstname"><%= users[i].firstname %></td>
-                <td data-label="lastname"><%= users[i].lastname %></td>
-                <td data-label="email"><%= users[i].email %></td>
-                <td data-label="password" ><div class="pwd"><%= users[i].password %></div></td>
-                <td data-label="password" ><div class="pwd"><%= users[i].hashpwd %></div></td>
-                <td data-label="action"><button class="action" onclick="getId(this)">View</button></td>
-                
-            </tr>
-            <%} %> 
-        </tbody>
-    </table>
-    <br> -->
-    <br>
+    <img src="assets/logo_mrcoffee.png" alt="Logo image" id="logoimg">
+    <h1>Welcome to the app, <%= users[0].firstname %> <%= users[0].lastname %></h1>
+    <div class="imgwrapper">
+        <img class="mainImage" src="assets/mr_coffee_salle.jpg" alt="Mr Coffee restaurant image">
+        <br><br>
     <div class="mydiv">
-    <% for(let i=0;i<users.length;i++){ %>
-        <div class="innerdiv">
-            <p>user id:<%= users[i].userid %></p>
-            <p>first name:<%= users[i].firstname %></p>
-            <p>last name:<%= users[i].lastname %></p>
-            <p>email id:<%= users[i].email %></p>
+       <h4>User Information</h4> 
+        <% for(let i=0;i<users.length;i++){ %>
+        <div class="homepginnerdiv">
+            <p>user id: <%= users[i].userid %></p>
+            <p>first name: <%= users[i].firstname %></p>
+            <p>last name: <%= users[i].lastname %></p>
+            <p>email id: <%= users[i].email %></p>
         </div>
         <%} %> 
     </div>    
+    </div>
+    
 </body>
 </html>

@@ -10,12 +10,10 @@ router.get('/*', (req,res)=>{
 
 router.post('/*', (req,res)=>{
     const user = req.path.substring(1).trim()
-    const {email, oldpassword, newpassword, confirmpassword} = req.body
+    const {email, password,confirmpassword} = req.body
     const cleanemail = email.trim()
    
-    if(cleanemail!=user){
-       res.send("This link is valid only for a specific user")
-    }else if(password.length < 8){
+    if(password.length < 8){
         res.send("Password must be atleast 8 characters")
     }
      //check if password and confirm password matches
@@ -31,10 +29,6 @@ router.post('/*', (req,res)=>{
             res.send("User does not exist")
         }
         else{
-            if(oldpassword!=user.password){
-                res.send("Password is incorrect")
-            }
-            else{
                 const salt = bcrypt.genSaltSync(10)
                 const hashPassword = bcrypt.hashSync(password, salt)
                 db.none('UPDATE users set password = $1, hashpwd = $2 where email = $3;',[password, hashPassword, cleanemail])
@@ -46,7 +40,7 @@ router.post('/*', (req,res)=>{
                 .catch((err)=>{
                     res.send(err)
                 })
-                    }
+
         }
     })
 })

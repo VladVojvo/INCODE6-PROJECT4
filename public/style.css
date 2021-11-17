@@ -2,12 +2,110 @@
     margin: 0;
     padding: 0;
 }
+/* Login CSS */
+#loginpgbody{
+    background-image: url('assets/mr_coffee_salle.jpg');  
+    /* min-height: 380px; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
 
-.box{
+#logoimg{
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.myform{
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid black;
+   /*  border: 2px solid #000000; */
+    margin-top: 100px;
+}
+
+#loginform{
+    border: 2px solid grey;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: white;
+    opacity: 0.95;
+    min-width: 350px;
+}
+
+/* Signup CSS */
+.mysignupform{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+   /*  border: 2px solid #000000; */
+    margin-top: 15px;
+}
+
+#signupform{
+    border: 2px solid grey;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: white;
+    opacity: 0.95;
+    min-width: 350px;
+}
+
+#signupimg{
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#signupbody{
+    background-image: url('assets/mrcoffee_salle2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Forgot Password CSS */
+
+.myforgotpwdform{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+   /*  border: 2px solid #000000; */
+    margin-top: 150px;
+}
+
+#forgotpwdform{
+    border: 2px solid grey;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: white;
+    opacity: 0.95;
+    min-width: 350px;
+}
+
+#forgotpwdimg{
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#forgotpwdbody{
+    background-image: url('assets/mrcoffee_salle2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 .mydiv{
@@ -17,37 +115,107 @@
     /* border: 2px solid black; */
 }
 
-.innerdiv{
-border: 2px solid black;
-margin: 5px 5px;
-width: 250px;
-padding: 10px 10px;
-float: left;
+/* Reset Password CSS */
+
+.myresetpwdform{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+   /*  border: 2px solid #000000; */
+    margin-top: 100px;
 }
 
-.nav-header{
-    width: 100%;
-    background: tomato;
-    height: 60px;
-    color: white;
+#resetpwdform{
+    border: 2px solid grey;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: white;
+    opacity: 0.95;
+    min-width: 350px;
+}
+
+#resetpwdimg{
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#resetpwdbody{
+    background-image: url('assets/mrcoffee_salle2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Navbar */
+#navbarlogo{
+    width: 100px;
+    margin-left: 20px;
+}
+
+.navbar-nav{
+    margin-left: 20px;
+}
+
+/* Schedules Page */
+
+/* #schedulesbody{
+    background-image: url('assets/mr_coffee_salle.jpg');  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+} */
+
+.schedulemanagement{
     display: flex;
     justify-content: space-between;
 }
-
-.nav-header ul{
-    margin-top: 20px;
-    margin-right: 50px;
-} 
-
-.nav-header ul a{
-    text-decoration: none;
-    font-size: 20px;
-    color: #fff;
+.addnewschedules, .deleteschedules{
+    width: 50%;
+    margin: 15px;
+}
+.mydiv h5{
+    margin-left: 15px;
 }
 
-button{
-    background: #fff;
-    color: tomato;
-    border: 2px solid #fff;
-    width: 70px;
+.innerdiv{
+border: 2px solid black;
+/* margin: 5px 5px; */
+width: 250px;
+padding: 10px 10px;
+float: left;
+background: linear-gradient(315deg, #485461 0%, #28313b 74%);;
+color: white;
+margin: 15px;
+}
+
+/* Homepage CSS */
+#homepagebody h1{
+    text-align: center;
+}
+
+.homepginnerdiv{
+    border: 2px solid black;   
+    padding: 10px 10px;
+    float: left;
+    background: linear-gradient(315deg, #485461 0%, #28313b 74%);;
+    color: white;
+    width: 100%;
+}
+
+.imgwrapper{
+    width:80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.mainImage{
+    width: 100%;
 }
